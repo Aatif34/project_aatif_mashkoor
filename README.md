@@ -15,7 +15,7 @@ The 25 classes include things like pizza, sushi, ramen, tacos, waffles, steak, s
 ## Folder structure
 
 The project follows the submission format required for grading:
-
+```
 project_aatif_mashkoor/
 ├── checkpoints/
 │   └── final_weights.pth
@@ -27,7 +27,7 @@ project_aatif_mashkoor/
 ├── train.py
 ├── predict.py
 └── interface.py
-
+```
 ---
 
 ## How to set it up
