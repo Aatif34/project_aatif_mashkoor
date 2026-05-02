@@ -5,14 +5,9 @@ import os
 from config import resize_x, resize_y
 from model import FoodResNetModel
 
-# The 25 distinct classes
-classes = sorted([
-    'pizza', 'sushi', 'samosa', 'ramen', 'fried_rice', 
-    'hamburger', 'hot_dog', 'ice_cream', 'donuts', 'french_fries',
-    'chicken_wings', 'dumplings', 'macaroni_and_cheese', 'nachos', 'omelette',
-    'pancakes', 'tacos', 'waffles', 'biryani', 'churros',
-    'cheesecake', 'cup_cakes', 'edamame', 'garlic_bread', 'gyoza'
-])
+# Dynamically read the exact folders from the data directory
+data_dir = 'data'
+classes = sorted([d for d in os.listdir(data_dir) if os.path.isdir(os.path.join(data_dir, d))])
 
 def classify_food(list_of_img_paths):
     # 1. Initialize the model and load the weights INSIDE the function
