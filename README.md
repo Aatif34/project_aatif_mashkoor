@@ -10,6 +10,34 @@ Basically the idea is simple — you give it a photo of food and it tells you wh
 
 The 25 classes include things like pizza, sushi, ramen, tacos, waffles, steak, samosa, dumplings and more — mostly visually distinct foods so the model actually has something meaningful to learn.
 
+### Supported Food Classes:
+The model has been trained to predict the following 25 food items:
+* Biryani
+* Cheesecake
+* Chicken Wings
+* Churros
+* Cup Cakes
+* Donuts
+* Dumplings
+* Edamame
+* French Fries
+* Fried Rice
+* Garlic Bread
+* Gyoza
+* Hamburger
+* Hot Dog
+* Ice Cream
+* Macaroni and Cheese
+* Nachos
+* Omelette
+* Pancakes
+* Pizza
+* Ramen
+* Samosa
+* Sushi
+* Tacos
+* Waffles
+
 ---
 
 ## Folder structure
