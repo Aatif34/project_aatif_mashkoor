@@ -1,43 +1,35 @@
-# Food Item Classification from Images
+Food Item Classification from Images
+Aatif Mashkoor | May 2026
 
-Author: Aatif Mashkoor  
-Date: May 2026  
+What is this project?
+Basically the idea is simple — you give it a photo of food and it tells you what it is. The model is a pretrained ResNet50 fine-tuned on 25 food categories from the Food-101 dataset. I used transfer learning because training from scratch on Colab would take forever and honestly there's no point when pretrained weights already exist.
+The 25 classes include things like pizza, sushi, ramen, tacos, waffles, steak, samosa, dumplings and more — mostly visually distinct foods so the model actually has something meaningful to learn.
 
-## Project Overview
-This project uses Transfer Learning with a pretrained ResNet50 Convolutional Neural Network (CNN) to classify images of food into 25 distinct categories. The dataset used is a subset of the Food-101 dataset.
+Folder structure
+The project follows the submission format required for grading:
+project_aatif_mashkoor/
+├── checkpoints/
+│   └── final_weights.pth
+├── data/
+│   └── (10 sample images per class)
+├── config.py
+├── dataset.py
+├── model.py
+├── train.py
+├── predict.py
+└── interface.py
 
-## Directory Structure
-The project strictly follows the required grading format:
-* `_checkpoints/`: Contains the `_final_weights.pth` file after training.
-* `data/`: Contains 10 raw `.jpg` sample images per class.
-* `config.py`: Hyperparameters and configuration variables.
-* `dataset.py`: Custom PyTorch Dataset and DataLoader using OpenCV.
-* `model.py`: Modified ResNet50 model setup.
-* `train.py`: The `train_model` loop function.
-* `predict.py`: The `classify_food` inference function.
-* `interface.py`: Standardized import mappings for automated grading.
-
-## Installation Instructions
-1. Clone this repository to your local machine:
-   ```bash
-   git clone [https://github.com/Aatif34/project_aatif_mashkoor.git](https://github.com/Aatif34/project_aatif_mashkoor.git)
-   cd project_aatif_mashkoor
-
-2. Install the required Python packages:
-
-Bash
+How to set it up
+Clone the repo and install the dependencies:
+bashgit clone https://github.com/Aatif34/project_aatif_mashkoor.git
+cd project_aatif_mashkoor
 pip install torch torchvision opencv-python numpy
 
-Execution Instructions
-Because this project is structured as a module for automated grading (via interface.py), the files contain functions rather than direct execution scripts.
+How to run predictions
+The predict function loads the trained weights automatically from the checkpoints folder. Just pass it a list of image paths:
+pythonfrom predict import classify_food
 
-To Predict/Classify Images:
-The prediction function automatically loads the trained model weights from the _checkpoints folder.
-
-Python
-from predict import classify_food
-
-# Run classification on a list of image paths
 image_paths = ["data/pizza/img1.jpg", "data/sushi/img1.jpg"]
 predictions = classify_food(image_paths)
 print(predictions)
+That's it. No extra setup needed as long as final_weights.pth is in the checkpoints folder.
